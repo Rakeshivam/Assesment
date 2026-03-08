@@ -153,7 +153,7 @@ function ComponentLibrary() {
                   <MailIcon />
                 </span>
                 <input
-                  className="cl-input cl-input--icon"
+                  className="cl-input cl-input--with-icon"
                   placeholder="email@company.com"
                 />
               </div>
