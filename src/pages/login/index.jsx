@@ -124,8 +124,13 @@ function Login({ onLoginSuccess }) {
   var [loading, setLoading] = useState(false);
 
   function handleSignIn() {
-    if (!email || !password) {
-      setErrorMsg("Please enter both email and password.");
+    if (!email) {
+      setErrorMsg("Please enter email .");
+      return;
+    }
+
+    if (!password) {
+      setErrorMsg("Please enter password.");
       return;
     }
     setLoading(true);
@@ -134,7 +139,11 @@ function Login({ onLoginSuccess }) {
       if (email === EMAIL && password === PASSWORD) {
         onLoginSuccess();
       } else {
-        setErrorMsg("Incorrect credentials. Try: rakesh@crm.com / rakesh123");
+        setErrorMsg(
+          "Incorrect credentials. Please Try: rakesh@crm.com / rakesh123",
+        );
+        setEmail("");
+        setPassword("");
         setLoading(false);
       }
     }, 700);
